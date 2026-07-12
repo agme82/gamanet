@@ -1112,3 +1112,54 @@ p {
     object-fit: contain; /* Ajusta la TV y la Poly Cam completas sin recortar */
     background: #1d1d1f;  /* Fondo oscuro premium para los laterales estéticos */
 }
+
+
+/* =========================================================
+   Ajustes Críticos para Celulares (Pantallas pequeñas)
+   ========================================================= */
+@media (max-width: 480px) {
+    /* 1. Reducir el tamaño exagerado del menú amontonado */
+    .header-inner-fluid,
+    .header-inner {
+        padding: 10px 0 !important;
+    }
+    
+    .brand img {
+        width: 180px !important; /* Logotipo más discreto en celular */
+    }
+    
+    .main-nav {
+        gap: 0.6rem !important; /* Espaciado corto entre enlaces */
+    }
+    
+    .main-nav a {
+        font-size: 0.75rem !important; /* Letra compacta para que quepa en menos filas */
+    }
+
+    /* 2. Corregir el título "mocho" del Hero */
+    .hero {
+        margin-top: 130px !important; /* Espacio para que el menú no lo tape */
+        padding: 20px 0 !important;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem !important; /* Achicamos la letra para que "Infraestructura" quepa completa */
+        line-height: 1.3 !important; /* Más separación vertical para que no se encimen las letras */
+        margin-bottom: 15px !important;
+    }
+
+    .hero-description {
+        font-size: 1rem !important; /* Descripción más cómoda para leer en celular */
+        margin-bottom: 25px !important;
+    }
+
+    /* 3. Ajustar los botones para que no usen tanto espacio */
+    .hero-actions {
+        width: 100%;
+    }
+    
+    .hero-actions .button {
+        padding: 12px 20px !important;
+        font-size: 0.95rem !important;
+    }
+}
