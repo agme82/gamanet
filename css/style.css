@@ -1115,64 +1115,68 @@ p {
 
 
 /* =========================================================
-   Ajustes Críticos para Celulares (Pantallas pequeñas) - Versión Inmersiva
+   Ajustes Críticos para Celulares (Contraste Máximo y Legibilidad)
    ========================================================= */
 @media (max-width: 480px) {
-    /* 1. Reducir el tamaño exagerado del menú amontonado */
+    /* 1. Menú compacto discreto */
     .header-inner-fluid,
     .header-inner {
         padding: 10px 0 !important;
     }
-    
     .brand img {
-        width: 180px !important; /* Logotipo más discreto en celular */
+        width: 180px !important;
     }
-    
     .main-nav {
-        gap: 0.6rem !important; /* Espaciado corto entre enlaces */
+        gap: 0.6rem !important;
     }
-    
     .main-nav a {
-        font-size: 0.75rem !important; /* Letra compacta */
+        font-size: 0.75rem !important;
     }
 
-    /* 2. Reingeniería Inmersiva del Hero para Celular */
+    /* 2. Reingeniería del Hero para contraste en móviles */
     .hero {
-        margin-top: 130px !important; /* Espacio para el menú fijo */
-        padding: 60px 1.5% 40px 1.5% !important; /* Más colchón vertical */
-        background-image: url("../img/hero.webp") !important; /* Asegura carga en minúscula */
-        background-position: center !important; /* Centra la foto de los equipos */
+        margin-top: 130px !important;
+        padding: 60px 5% 40px 5% !important; 
+        background-image: url("../img/hero.webp") !important;
+        background-position: center !important;
         background-size: cover !important;
     }
 
-    /* Cambiamos el degradado horizontal por uno vertical inmersivo */
+    /* Oscurecemos sutilmente la máscara para proteger el texto blanco */
     .hero-mask-overlay {
         position: absolute;
         inset: 0;
         background: linear-gradient(to bottom, 
-            rgba(255, 255, 255, 0.90) 0%, 
-            rgba(255, 255, 255, 0.85) 50%, 
-            rgba(255, 255, 255, 0.95) 100%
+            rgba(0, 0, 0, 0.65) 0%, 
+            rgba(0, 0, 0, 0.55) 50%, 
+            rgba(0, 0, 0, 0.75) 100%
         ) !important;
         z-index: 1;
     }
 
     .hero-content {
-        text-align: center !important; /* Centramos todo el contenido en móviles */
+        text-align: center !important;
     }
 
+    /* Transformación de textos oscuros a blanco puro */
     .hero h1 {
-        font-size: 2.1rem !important; /* Un poco más grande pero seguro */
+        color: #ffffff !important; /* Letras principales en blanco */
+        font-size: 2.1rem !important;
         line-height: 1.2 !important;
         margin-bottom: 20px !important;
     }
 
+    .hero h1 .highlight {
+        color: var(--orange) !important; /* Mantiene "tecnológica" en naranja */
+    }
+
     .hero-description {
+        color: rgba(255, 255, 255, 0.9) !important; /* Descripción en blanco claro */
         font-size: 1.05rem !important;
         margin-bottom: 30px !important;
     }
 
-    /* 3. Ajustar los botones en bloque vertical estético */
+    /* 3. Rescate y visibilidad de los botones en bloque vertical */
     .hero-actions {
         flex-direction: column !important;
         gap: 12px !important;
@@ -1180,17 +1184,49 @@ p {
     }
     
     .hero-actions .button {
-        width: 100% !important; /* Botones a lo ancho del cel para fácil clic */
+        width: 100% !important;
         padding: 14px 20px !important;
         font-size: 1rem !important;
     }
 
-    /* Centrar los checks inferiores en el móvil */
+    /* Forzar a que el botón transparente sea blanco con texto blanco para resaltar */
+    .hero-actions .button-outline-orange {
+        border: 2px solid #ffffff !important;
+        color: #ffffff !important;
+        background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    /* 4. Alineación e iluminación de los checks inferiores */
     .hero-highlights {
         flex-direction: column !important;
-        gap: 14px !important;
+        gap: 16px !important;
+        align-items: flex-start !important; /* Alineación izquierda limpia para lectura */
+        max-width: 290px;
+        margin: 30px auto 0 auto !important; /* Centra el bloque completo en la pantalla */
+        border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+        padding-top: 25px !important;
+    }
+
+    .highlight-item {
+        display: flex !important;
         align-items: center !important;
-        border-top: 1px solid rgba(0,0,0,0.08) !important;
-        margin-top: 20px !important;
+        text-align: left !important;
+    }
+
+    /* Letras de los checks en blanco */
+    .highlight-item span {
+        color: #ffffff !important;
+        font-size: 1rem !important;
+    }
+
+    /* Círculo del check naranja encendido para identidad de marca */
+    .icon-check-wrapper {
+        border: 2px solid var(--orange) !important;
+        background-color: rgba(255, 91, 24, 0.15) !important;
+    }
+
+    /* Icono interno de la palomita en naranja impecable */
+    .icon-check {
+        color: var(--orange) !important;
     }
 }
