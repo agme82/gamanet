@@ -1105,3 +1105,10 @@ p {
         height: 250px; 
     }
 }
+
+
+/* Corrección quirúrgica exclusiva para el slider de APG */
+.card-slider.slide-apg img {
+    object-fit: contain; /* Ajusta la TV y la Poly Cam completas sin recortar */
+    background: #1d1d1f;  /* Fondo oscuro premium para los laterales estéticos */
+}
